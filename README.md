@@ -1,5 +1,6 @@
 # mx3sw: spin-wave tools for MuMax3
 
+[![tests](https://github.com/Dark-atoms/mumax3-spinwave-tools/actions/workflows/tests.yml/badge.svg)](https://github.com/Dark-atoms/mumax3-spinwave-tools/actions/workflows/tests.yml)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24375849.svg)](https://doi.org/10.5281/zenodo.24375849)
 
 Small, tested Python helpers for the analysis steps that come up in almost every
