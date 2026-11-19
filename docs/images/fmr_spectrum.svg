@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="432pt" height="230.4pt" viewBox="0 0 432 230.4" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<defs>
+<style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt} text{font-family: Inter, "DejaVu Sans", Arial, sans-serif}</style>
+</defs>
+<g>
+<g id="patch_1">
+<path d="M 0 230.4
+L 432 230.4
+L 432 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+</g>
+<g>
+<g id="patch_2">
+<path d="M 49.28 184.40
+L 417.12 184.40
+L 417.12 28.42
+L 49.28 28.42
+z
+" style="fill: #ffffff"/>
+</g>
+<g id="matplotlib.axis_1">
+<g>
+<g>
+<defs>
+<path id="mdc8e4c8a5b" d="M 0 0
+L 0 3.5
+" style="stroke: #000000; stroke-width: 0.8"/>
+</defs>
+<use xlink:href="#mdc8e4c8a5b" x="49.28" y="184.40" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: middle" x="49.28" y="201.08">4</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mdc8e4c8a5b" x="101.83" y="184.40" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: middle" x="101.83" y="201.08">5</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mdc8e4c8a5b" x="154.38" y="184.40" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: middle" x="154.38" y="201.08">6</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mdc8e4c8a5b" x="206.93" y="184.40" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: middle" x="206.93" y="201.08">7</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mdc8e4c8a5b" x="259.48" y="184.40" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: middle" x="259.48" y="201.08">8</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mdc8e4c8a5b" x="312.03" y="184.40" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: middle" x="312.03" y="201.08">9</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mdc8e4c8a5b" x="364.57" y="184.40" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: middle" x="364.57" y="201.08">10</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mdc8e4c8a5b" x="417.12" y="184.40" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: middle" x="417.12" y="201.08">11</text>
+</g>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: middle" x="233.20" y="217.18">Frequency (GHz)</text>
+</g>
+</g>
+<g id="matplotlib.axis_2">
+<g>
+<g>
+<defs>
+<path id="mde1ee487d9" d="M 0 0
+L -3.5 0
+" style="stroke: #000000; stroke-width: 0.8"/>
+</defs>
+<use xlink:href="#mde1ee487d9" x="49.28" y="177.32" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: end" x="42.28" y="182.16">0.0</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mde1ee487d9" x="49.28" y="148.96" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: end" x="42.28" y="153.80">0.2</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mde1ee487d9" x="49.28" y="120.60" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: end" x="42.28" y="125.44">0.4</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mde1ee487d9" x="49.28" y="92.23" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: end" x="42.28" y="97.08">0.6</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mde1ee487d9" x="49.28" y="63.87" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: end" x="42.28" y="68.72">0.8</text>
+</g>
+</g>
+<g>
+<g>
+<use xlink:href="#mde1ee487d9" x="49.28" y="35.51" style="stroke: #000000; stroke-width: 0.8"/>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: end" x="42.28" y="40.35">1.0</text>
+</g>
+</g>
+<g>
+<text style="font-size: 10px; text-anchor: middle" x="20.48" y="106.41" transform="rotate(-90 20.48 106.41)">Amplitude (norm.)</text>
+</g>
+</g>
+<g>
+<path d="M 50.92 176.64
+L 53.33 173.55
+L 55.74 172.61
+L 58.15 174.49
+L 60.55 175.34
+L 62.96 173.19
+L 65.37 174.00
+L 67.77 173.98
+L 70.18 170.92
+L 72.59 169.10
+L 75.00 173.48
+L 77.40 174.13
+L 79.81 171.59
+L 82.22 168.20
+L 84.62 169.85
+L 87.03 174.08
+L 89.44 174.88
+L 91.85 174.51
+L 94.25 176.01
+L 96.66 173.26
+L 99.07 174.29
+L 101.48 172.13
+L 103.88 173.17
+L 106.29 168.79
+L 108.70 169.66
+L 111.10 171.73
+L 113.51 172.95
+L 115.92 167.91
+L 118.33 169.37
+L 120.73 174.32
+L 123.14 173.84
+L 125.55 169.45
+L 127.95 168.29
+L 130.36 167.84
+L 132.77 171.41
+L 135.18 172.57
+L 137.58 172.03
+L 139.99 166.16
+L 142.40 165.75
+L 144.80 169.72
+L 147.21 167.49
+L 149.62 158.72
+L 152.03 170.80
+L 154.43 173.64
+L 156.84 171.00
+L 159.25 162.15
+L 161.65 164.32
+L 164.06 165.34
+L 166.47 147.19
+L 168.88 144.03
+L 171.28 151.03
+L 173.69 148.61
+L 176.10 160.29
+L 178.51 163.78
+L 180.91 147.79
+L 183.32 153.60
+L 185.73 145.75
+L 188.13 116.95
+L 190.54 111.77
+L 192.95 122.26
+L 195.36 150.49
+L 197.76 157.35
+L 200.17 105.37
+L 202.58 74.10
+L 204.98 35.51
+L 207.39 104.46
+L 209.80 142.69
+L 212.21 161.73
+L 214.61 98.47
+L 217.02 86.88
+L 219.43 122.73
+L 221.83 149.43
+L 224.24 157.50
+L 226.65 154.13
+L 229.06 151.64
+L 231.46 154.48
+L 233.87 154.92
+L 236.28 172.27
+L 238.68 163.28
+L 241.09 163.24
+L 243.50 169.06
+L 245.91 162.09
+L 248.31 152.65
+L 250.72 170.43
+L 253.13 165.62
+L 255.54 159.92
+L 257.94 163.92
+L 260.35 171.91
+L 262.76 171.59
+L 265.16 164.33
+L 267.57 172.05
+L 269.98 160.96
+L 272.39 164.29
+L 274.79 174.81
+L 277.20 177.12
+L 279.61 171.56
+L 282.01 174.63
+L 284.42 168.82
+L 286.83 170.07
+L 289.24 163.86
+L 291.64 161.94
+L 294.05 174.96
+L 296.46 170.59
+L 298.86 171.71
+L 301.27 172.12
+L 303.68 167.48
+L 306.09 168.05
+L 308.49 166.69
+L 313.31 172.88
+L 315.71 173.86
+L 318.12 173.98
+L 320.53 174.27
+L 322.94 168.40
+L 325.34 166.21
+L 327.75 165.52
+L 330.16 166.56
+L 332.57 171.31
+L 334.97 175.27
+L 337.38 170.51
+L 339.79 170.73
+L 342.19 169.96
+L 344.60 171.36
+L 347.01 174.83
+L 349.42 169.76
+L 351.82 172.73
+L 354.23 173.84
+L 356.64 174.42
+L 359.04 175.68
+L 361.45 176.71
+L 363.86 176.59
+L 366.27 172.09
+L 368.67 170.84
+L 371.08 172.90
+L 373.49 173.13
+L 375.89 173.77
+L 378.30 173.29
+L 380.71 169.02
+L 383.12 168.64
+L 385.52 170.97
+L 387.93 175.85
+L 390.34 171.81
+L 392.74 170.70
+L 395.15 173.02
+L 397.56 175.82
+L 399.97 174.89
+L 402.37 175.36
+L 404.78 175.06
+L 409.60 172.21
+L 412.00 175.12
+L 414.41 175.63
+L 416.82 173.50
+L 416.82 173.50
+" clip-path="url(#p874bc8eefa)" style="fill: none; stroke: #999999; stroke-width: 1.2; stroke-linecap: square"/>
+</g>
+<g>
+<path d="M 51.68 177.12
+L 54.31 176.94
+L 56.93 176.92
+L 59.55 177.03
+L 62.18 176.89
+L 64.80 176.54
+L 67.43 176.49
+L 70.05 176.99
+L 72.68 177.10
+L 75.30 177.06
+L 77.93 176.83
+L 80.55 177.31
+L 83.18 176.97
+L 88.42 177.17
+L 93.67 176.67
+L 96.30 177.15
+L 101.55 176.33
+L 106.80 177.04
+L 109.42 176.45
+L 112.05 176.48
+L 114.67 176.70
+L 117.30 176.58
+L 119.92 176.18
+L 122.54 176.30
+L 125.17 177.19
+L 127.79 176.91
+L 130.42 177.10
+L 135.67 177.05
+L 140.92 176.41
+L 143.54 176.72
+L 146.17 176.78
+L 148.79 176.68
+L 151.41 177.11
+L 156.66 176.60
+L 159.29 176.51
+L 161.91 176.87
+L 164.54 176.97
+L 167.16 176.94
+L 169.79 176.51
+L 172.41 176.21
+L 177.66 176.37
+L 180.28 176.75
+L 182.91 176.80
+L 185.53 176.47
+L 188.16 176.87
+L 190.78 177.12
+L 193.41 176.37
+L 196.03 176.37
+L 198.66 177.08
+L 201.28 176.44
+L 203.91 176.15
+L 206.53 176.53
+L 209.15 176.79
+L 211.78 177.26
+L 217.03 176.72
+L 219.65 176.99
+L 222.28 175.90
+L 224.90 176.42
+L 227.53 175.51
+L 230.15 173.68
+L 232.78 163.30
+L 235.40 110.69
+L 238.02 35.51
+L 240.65 80.41
+L 243.27 155.08
+L 245.90 171.30
+L 248.52 174.62
+L 251.15 176.97
+L 253.77 176.02
+L 256.40 176.57
+L 259.02 176.77
+L 261.65 176.85
+L 266.90 176.71
+L 272.14 177.19
+L 274.77 177.03
+L 277.39 177.06
+L 280.02 176.58
+L 285.27 176.72
+L 290.52 175.76
+L 293.14 176.32
+L 295.77 176.60
+L 298.39 176.52
+L 301.01 176.66
+L 303.64 176.63
+L 308.89 177.10
+L 314.14 176.47
+L 316.76 176.73
+L 319.39 176.26
+L 322.01 175.57
+L 324.64 175.92
+L 327.26 176.57
+L 329.88 176.68
+L 332.51 176.96
+L 335.13 176.29
+L 337.76 176.24
+L 340.38 176.54
+L 343.01 177.02
+L 345.63 176.64
+L 348.26 176.56
+L 350.88 177.21
+L 353.51 176.41
+L 356.13 176.02
+L 358.75 176.32
+L 361.38 176.15
+L 364.00 176.89
+L 366.63 176.93
+L 369.25 176.72
+L 371.88 176.33
+L 374.50 176.06
+L 377.13 176.22
+L 379.75 176.95
+L 382.38 176.25
+L 385.00 176.69
+L 387.62 176.45
+L 390.25 175.65
+L 392.87 176.26
+L 395.50 176.27
+L 398.12 175.93
+L 400.75 176.51
+L 403.37 176.92
+L 406.00 176.84
+L 408.62 176.20
+L 411.25 176.03
+L 413.87 176.66
+L 416.50 176.41
+L 416.50 176.41
+" clip-path="url(#p874bc8eefa)" style="fill: none; stroke: #1f77b4; stroke-width: 1.6; stroke-linecap: square"/>
+</g>
+<g>
+<path d="M 238.46 184.40
+L 238.46 28.42
+" clip-path="url(#p874bc8eefa)" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #d62728"/>
+</g>
+<g id="patch_3">
+<path d="M 49.28 184.40
+L 49.28 28.42
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+</g>
+<g id="patch_4">
+<path d="M 417.12 184.40
+L 417.12 28.42
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+</g>
+<g id="patch_5">
+<path d="M 49.28 184.40
+L 417.12 184.40
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+</g>
+<g id="patch_6">
+<path d="M 49.28 28.42
+L 417.12 28.42
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+</g>
+<g>
+<text style="font-size: 12px; text-anchor: middle" x="233.20" y="22.42">FMR peak from table.txt</text>
+</g>
+<g>
+<g>
+<path d="M 301.15 42.09
+L 310.15 42.09
+L 319.15 42.09
+" style="fill: none; stroke: #999999; stroke-width: 1.2; stroke-linecap: square"/>
+</g>
+<g>
+<text style="font-size: 9px; text-anchor: start" x="326.35" y="45.24">fixed dt (wrong)</text>
+</g>
+<g>
+<path d="M 301.15 57.48
+L 310.15 57.48
+L 319.15 57.48
+" style="fill: none; stroke: #1f77b4; stroke-width: 1.6; stroke-linecap: square"/>
+</g>
+<g>
+<text style="font-size: 9px; text-anchor: start" x="326.35" y="60.63">times= (resampled)</text>
+</g>
+<g>
+<path d="M 301.15 72.87
+L 310.15 72.87
+L 319.15 72.87
+" style="fill: none; stroke-dasharray: 3.7,1.6; stroke-dashoffset: 0; stroke: #d62728"/>
+</g>
+<g>
+<text style="font-size: 9px; text-anchor: start" x="326.35" y="76.02">true 7.60 GHz</text>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="p874bc8eefa">
+<rect x="49.28" y="28.42" width="367.83" height="155.97"/>
+</clipPath>
+</defs>
+</svg>
