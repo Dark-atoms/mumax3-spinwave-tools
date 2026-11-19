@@ -1,0 +1,12 @@
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+build/
+dist/
+
+# MuMax3 output (large) — never commit simulation data
+*.out/
+*.ovf
+*.npy
+*.png
