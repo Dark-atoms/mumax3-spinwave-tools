@@ -84,6 +84,21 @@ def test_dispersion_map_finds_wave():
     assert abs(abs(k[j]) - k0) / k0 < 0.02
 
 
+def test_dispersion_map_sign_convention():
+    # a wave travelling in +x must appear at k > 0 and f > 0
+    dt, dx = 25e-12, 10e-9
+    t = np.arange(256)[:, None] * dt
+    x = np.arange(128)[None, :] * dx
+    m = np.cos(2 * np.pi / (16 * dx) * x - 2 * np.pi * 5e9 * t)
+    k, f, P = mx3sw.dispersion_map(m, dt, dx)
+    assert np.all(np.diff(f) > 0)
+    # real signals also have the mirror peak at (-k, -f); look at the k > 0 half
+    Pk = P[:, k > 0]
+    i, j = np.unravel_index(np.argmax(Pk), Pk.shape)
+    assert f[i] > 0
+    assert Pk[f < 0].max() < 1e-6 * Pk.max()
+
+
 def test_wavelength_from_profile():
     x = np.linspace(0, 10e-6, 2001)
     assert mx3sw.wavelength_from_profile(x, np.cos(2 * np.pi * x / 1.5e-6)) == pytest.approx(1.5e-6, rel=0.01)
