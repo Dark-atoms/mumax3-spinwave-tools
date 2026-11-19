@@ -90,7 +90,8 @@ def dispersion_map(m_tx, dt: float, dx: float, window: bool = True):
 
     Returns
     -------
-    k : ndarray (rad/m, centred), f : ndarray (Hz, centred), power : ndarray (n_time, n_x)
+    k : ndarray (rad/m, sorted), f : ndarray (Hz, sorted), power : ndarray (n_time, n_x)
+        A wave travelling in +x, m ~ cos(k x - 2 pi f t), appears at k > 0 and f > 0.
     """
     m = np.asarray(m_tx, dtype=float)
     m = m - m.mean(axis=0, keepdims=True)
@@ -98,8 +99,11 @@ def dispersion_map(m_tx, dt: float, dx: float, window: bool = True):
         m = m * np.outer(np.hanning(m.shape[0]), np.hanning(m.shape[1]))
     power = np.abs(np.fft.fftshift(np.fft.fft2(m))) ** 2
     k = 2 * np.pi * np.fft.fftshift(np.fft.fftfreq(m.shape[1], d=dx))
-    f = np.fft.fftshift(np.fft.fftfreq(m.shape[0], d=dt))
-    return k, f, power
+    # numpy's fft2 puts exp(i(kx - wt)) at (+k, -f); flip the time axis so that
+    # waves travelling in +x have positive k and positive f
+    f = -np.fft.fftshift(np.fft.fftfreq(m.shape[0], d=dt))
+    order = np.argsort(f)
+    return k, f[order], power[order]
 
 
 def wavelength_from_profile(x, profile, min_height: float = 0.0) -> float:
