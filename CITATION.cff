@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software in your research, please cite it as below."
+title: "mx3sw: spin-wave analysis tools for MuMax3"
+type: software
+authors:
+  - family-names: Mandal
+    given-names: Subhrojyoti
+    affiliation: "Khulna University of Engineering & Technology (KUET)"
+version: 0.1.0
+date-released: "2026-11-19"
+license: MIT
+repository-code: "https://github.com/Dark-atoms/mumax3-spinwave-tools"
+keywords:
+  - mumax3
+  - micromagnetics
+  - spin waves
+  - magnonics
+  - OVF
