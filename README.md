@@ -44,8 +44,19 @@ k, f, power = mx3sw.dispersion_map(mx_line, dt=25e-12, dx=10e-9)
 
 ## Examples
 
+Both figures below come from [`examples/tutorial.ipynb`](examples/tutorial.ipynb), which runs in seconds on synthetic data (no MuMax3 or GPU needed).
+
+![FMR peak: fixed dt vs. resampled times](docs/images/fmr_spectrum.svg)
+
+*Left as is, the uneven save times in `table.txt` move the FMR peak by about 8% here; `times=` recovers the true frequency.*
+
+![Dispersion from the 2D FFT vs. exchange theory](docs/images/dispersion.svg)
+
+*The 2D FFT ridge of m(t, x) follows the analytical exchange dispersion. A wave travelling in +x appears at k > 0, f > 0.*
+
 | Script | What it shows |
 |---|---|
+| `examples/tutorial.ipynb` | Step-by-step: FMR frequency from `table.txt`, dispersion from m(t, x) |
 | `examples/01_permalloy_dispersion.py` | Sinc-pulse excitation in a Permalloy waveguide, f(k) map vs. exchange theory |
 | `examples/02_kittel_sweep.py` | FMR frequency vs. bias field, Kittel fit recovers Msat |
 
