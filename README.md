@@ -61,6 +61,24 @@ The tests use synthetic data (OVF round-trips, known sine waves, known Kittel cu
 
 Dipolar contributions are not included in `exchange_dispersion`; use it as a guide for short wavelengths.
 
+## How to cite
+
+If you use mx3sw in work that leads to a publication, please cite it.
+GitHub's **"Cite this repository"** button (right sidebar) gives APA and BibTeX from [`CITATION.cff`](CITATION.cff), or use:
+
+```bibtex
+@software{mandal_mx3sw_2026,
+  author  = {Mandal, Subhrojyoti},
+  title   = {mx3sw: spin-wave analysis tools for MuMax3},
+  version = {0.1.0},
+  year    = {2026},
+  url     = {https://github.com/Dark-atoms/mumax3-spinwave-tools},
+  license = {MIT}
+}
+```
+
+If you copy or adapt the code, the MIT license requires keeping the copyright notice in [LICENSE](LICENSE).
+
 ## Contributing
 
 Issues and pull requests are welcome, especially other analysis steps you repeat in your own MuMax3 work.
