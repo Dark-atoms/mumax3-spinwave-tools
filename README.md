@@ -1,5 +1,7 @@
 # mx3sw: spin-wave tools for MuMax3
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24375849.svg)](https://doi.org/10.5281/zenodo.24375849)
+
 Small, tested Python helpers for the analysis steps that come up in almost every
 [MuMax3](https://mumax.github.io/) spin-wave simulation:
 
@@ -72,6 +74,7 @@ GitHub's **"Cite this repository"** button (right sidebar) gives APA and BibTeX 
   title   = {mx3sw: spin-wave analysis tools for MuMax3},
   version = {0.1.0},
   year    = {2026},
+  doi     = {10.5281/zenodo.24375849},
   url     = {https://github.com/Dark-atoms/mumax3-spinwave-tools},
   license = {MIT}
 }
