@@ -42,6 +42,15 @@ mx_line = m[:, 0, 0, m.shape[3] // 2, :]                # m_x along the centre l
 k, f, power = mx3sw.dispersion_map(mx_line, dt=25e-12, dx=10e-9)
 ```
 
+To read the actual saved simulation times, use
+`files, m, times = mx3sw.read_ovf_series("sim.out", return_times=True)`.
+`times` is a one-dimensional array in seconds, in the same filename order as
+`files` and aligned with the retained frames when a shape mismatch is skipped.
+Missing, malformed or non-finite time metadata gives `numpy.nan`, not an inferred
+time. For one file, `m, time = mx3sw.read_ovf("m000000.ovf", return_times=True)`
+reads its `Total simulation time` description (or OVF 1.0's `Time (s)`).
+Calls without `return_times=True` keep their original return values.
+
 ## Examples
 
 Both figures below come from [`examples/tutorial.ipynb`](examples/tutorial.ipynb), which runs in seconds on synthetic data (no MuMax3 or GPU needed).
