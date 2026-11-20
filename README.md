@@ -75,6 +75,14 @@ The tests use synthetic data (OVF round-trips, known sine waves, known Kittel cu
 
 Dipolar contributions are not included in `exchange_dispersion`; use it as a guide for short wavelengths.
 
+## Related projects
+
+mx3sw has a small, dependency-free OVF reader so it works on its own, but its focus is the spin-wave analysis. For more complete file I/O and wider workflows, see:
+
+- [pyovf](https://pypi.org/project/pyovf/): fast reading and writing of OVF files
+- [ubermag](https://ubermag.github.io/): full micromagnetic workflow in Python, including a MuMax3 calculator (mumax3c)
+- [mx3import](https://github.com/AbsoluteVacuum/mumax-utilities/blob/main/python/mx3import.py) by [AbsoluteVacuum](https://github.com/AbsoluteVacuum): single-file MuMax3 importer with partial, parallel and `.tar` loading
+
 ## How to cite
 
 If you use mx3sw in work that leads to a publication, please cite it.
