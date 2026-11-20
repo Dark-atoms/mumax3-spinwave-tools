@@ -75,15 +75,13 @@ def read_ovf(path) -> np.ndarray:
         kind = meta["data"][0].lower()
 
         if kind == "text":
-            values = []
-            for raw in f:
-                line = raw.decode("latin-1").strip()
-                if not line or line.startswith("#"):
-                    continue
-                values.extend(float(v) for v in line.split())
-                if len(values) >= n:
-                    break
-            data = np.asarray(values[:n], dtype=np.float64)
+            # The data block ends at the "# End: Data Text" line; parse it in one go
+            # with NumPy's C parser instead of splitting line by line in Python.
+            block = f.read()
+            end = block.find(b"#")
+            if end != -1:
+                block = block[:end]
+            data = np.fromstring(block.decode("latin-1"), dtype=np.float64, sep=" ")[:n]
         elif kind == "binary":
             size = int(meta["data"][1])
             if size not in (4, 8):
