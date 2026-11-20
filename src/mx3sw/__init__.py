@@ -6,7 +6,7 @@ from .spectrum import (dispersion_map, fft_spectrum, peak_frequency, resample_un
                        wavelength_from_profile)
 from .theory import GAMMA, MU0, exchange_dispersion, fit_kittel_ms, kittel_inplane
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
     "read_ovf", "read_ovf_series", "read_table", "run_mumax3",
