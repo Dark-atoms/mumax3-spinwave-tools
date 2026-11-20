@@ -92,7 +92,7 @@ GitHub's **"Cite this repository"** button (right sidebar) gives APA and BibTeX 
 @software{mandal_mx3sw_2026,
   author  = {Mandal, Subhrojyoti},
   title   = {mx3sw: spin-wave analysis tools for MuMax3},
-  version = {0.1.0},
+  version = {0.2.0},
   year    = {2026},
   doi     = {10.5281/zenodo.24375849},
   url     = {https://github.com/Dark-atoms/mumax3-spinwave-tools},
