@@ -42,6 +42,17 @@ def test_read_ovf_roundtrip(tmp_path, mode):
     assert np.allclose(out, arr, atol=1e-6)
 
 
+def test_read_ovf_text_truncated(tmp_path):
+    arr = np.ones((3, 1, 2, 2))
+    p = tmp_path / "m_short.ovf"
+    _write_ovf2(p, arr, "text")
+    lines = p.read_bytes().splitlines(keepends=True)
+    del lines[-4]  # drop one data row
+    p.write_bytes(b"".join(lines))
+    with pytest.raises(ValueError, match="Expected 12 values"):
+        mx3sw.read_ovf(p)
+
+
 def test_read_ovf_series(tmp_path):
     for i in range(3):
         _write_ovf2(tmp_path / f"m{i:06d}.ovf", np.full((3, 1, 2, 2), float(i)))
