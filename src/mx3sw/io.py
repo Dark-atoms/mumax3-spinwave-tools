@@ -49,13 +49,25 @@ def _parse_header(f):
         if key == "begin" and value.lower().startswith("data"):
             meta["data"] = value.split()[1:]  # e.g. ["Binary", "4"] or ["Text"]
             return meta
+        if key == "desc":
+            label, _, time_text = value.partition(":")
+            if label.strip().lower() in ("total simulation time", "time (s)"):
+                try:
+                    seconds = float(time_text.split()[0])
+                except (ValueError, IndexError):
+                    seconds = float("nan")
+                meta["simulation_time"] = seconds if np.isfinite(seconds) else float("nan")
         meta[key] = value
 
 
-def read_ovf(path) -> np.ndarray:
+def read_ovf(path, *, return_times: bool = False) -> np.ndarray | tuple[np.ndarray, float]:
     """Read one OVF file written by MuMax3.
 
     Supports OVF 2.0 (text, binary 4, binary 8) and OVF 1.0 text/binary.
+
+    With ``return_times=True``, return ``(array, time_in_seconds)``. The time
+    comes from MuMax3's ``Desc: Total simulation time: ... s`` header. Missing,
+    malformed or non-finite times are represented by ``numpy.nan``.
 
     Returns
     -------
@@ -100,24 +112,36 @@ def read_ovf(path) -> np.ndarray:
     if data.size != n:
         raise ValueError(f"Expected {n} values, found {data.size} in {path}")
     # File order: component fastest, then x, y, z
-    return data.reshape(nz, ny, nx, dim).transpose(3, 0, 1, 2).copy()
+    array = data.reshape(nz, ny, nx, dim).transpose(3, 0, 1, 2).copy()
+    if return_times:
+        return array, meta.get("simulation_time", float("nan"))
+    return array
 
 
-def read_ovf_series(folder, pattern: str = "m*.ovf") -> tuple[list[Path], np.ndarray]:
+def read_ovf_series(
+    folder, pattern: str = "m*.ovf", *, return_times: bool = False
+) -> tuple[list[Path], np.ndarray] | tuple[list[Path], np.ndarray, np.ndarray]:
     """Read every OVF file in ``folder`` matching ``pattern`` (sorted by name).
 
     Returns the file list and an array of shape ``(time, valuedim, z, y, x)``.
     Files whose shape differs from the first one are skipped with a warning.
+    With ``return_times=True``, also return a one-dimensional array of times in
+    seconds, aligned with the retained files and frames (``numpy.nan`` when
+    unavailable). Times are read from each file, not inferred from its name.
     """
     files = sorted(Path(folder).glob(pattern))
     if not files:
         raise FileNotFoundError(f"No files matching {pattern!r} in {folder}")
-    frames, used = [], []
+    frames, used, times = [], [], []
     for p in files:
-        arr = read_ovf(p)
+        arr, seconds = read_ovf(p, return_times=True)
         if frames and arr.shape != frames[0].shape:
             print(f"[mx3sw] skipping {p.name}: shape {arr.shape} != {frames[0].shape}")
             continue
         frames.append(arr)
         used.append(p)
-    return used, np.stack(frames)
+        times.append(seconds)
+    stack = np.stack(frames)
+    if return_times:
+        return used, stack, np.asarray(times)
+    return used, stack

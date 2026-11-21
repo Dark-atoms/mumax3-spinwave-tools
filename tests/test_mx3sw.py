@@ -4,13 +4,14 @@ import pytest
 import mx3sw
 
 
-def _write_ovf2(path, arr, mode="text"):
+def _write_ovf2(path, arr, mode="text", desc=()):
     """Write a (3, nz, ny, nx) array as a minimal OVF 2.0 file."""
     dim, nz, ny, nx = arr.shape
     header = (
         "# OOMMF OVF 2.0\n# Segment count: 1\n# Begin: Segment\n# Begin: Header\n"
         f"# valuedim: {dim}\n# xnodes: {nx}\n# ynodes: {ny}\n# znodes: {nz}\n"
-        "# End: Header\n"
+        + "".join(f"# Desc: {line}\n" for line in desc)
+        + "# End: Header\n"
     )
     flat = arr.transpose(1, 2, 3, 0).reshape(-1, dim)
     with open(path, "wb") as f:
@@ -124,3 +125,57 @@ def test_kittel_fit_recovers_ms():
 
 def test_exchange_dispersion_k0_is_larmor():
     assert mx3sw.exchange_dispersion(0.0, 0.1, 13e-12, 8e5) == pytest.approx(mx3sw.GAMMA * 0.1 / (2 * np.pi))
+
+
+@pytest.mark.parametrize("mode", ["text", "b4", "b8"])
+@pytest.mark.parametrize("time", [0.0, 1.25e-12, 2.5])
+def test_read_ovf_returns_time_without_changing_data(tmp_path, mode, time):
+    path = tmp_path / "m.ovf"
+    data = np.arange(12.0).reshape(3, 1, 2, 2)
+    _write_ovf2(path, data, mode, desc=[
+        "unrelated description", f"Total simulation time: {time} s", "another description",
+    ])
+    frame, seconds = mx3sw.read_ovf(path, return_times=True)
+    np.testing.assert_allclose(frame, data)
+    assert seconds == time
+    np.testing.assert_array_equal(mx3sw.read_ovf(path), frame)
+
+
+@pytest.mark.parametrize("desc", [
+    (), ("unrelated",), ("Total simulation time:",),
+    ("Total simulation time: unknown s",), ("Total simulation time: inf s",),
+])
+def test_unavailable_time_is_nan_not_a_fabricated_zero(tmp_path, desc):
+    path = tmp_path / "m.ovf"
+    _write_ovf2(path, np.ones((3, 1, 1, 1)), desc=desc)
+    frame, seconds = mx3sw.read_ovf(path, return_times=True)
+    assert np.isnan(seconds)
+    np.testing.assert_array_equal(frame, mx3sw.read_ovf(path))
+
+
+def test_series_times_follow_retained_frames_in_filename_order(tmp_path, capsys):
+    for name, shape, desc in [
+        ("m003.ovf", (3, 1, 1, 1), ("Total simulation time: 3e-9 s",)),
+        ("m001.ovf", (3, 1, 1, 2), ("Total simulation time: 1e-9 s",)),
+        ("m000.ovf", (3, 1, 1, 1), ("Total simulation time: 0 s",)),
+        ("m002.ovf", (3, 1, 1, 1), ()),
+    ]:
+        _write_ovf2(tmp_path / name, np.ones(shape), desc=desc)
+    files, frames, times = mx3sw.read_ovf_series(tmp_path, return_times=True)
+    assert [f.name for f in files] == ["m000.ovf", "m002.ovf", "m003.ovf"]
+    np.testing.assert_allclose(times, [0.0, np.nan, 3e-9], equal_nan=True)
+    assert times.shape == (frames.shape[0],)
+    old_files, old_frames = mx3sw.read_ovf_series(tmp_path)
+    assert old_files == files
+    np.testing.assert_array_equal(old_frames, frames)
+    assert "skipping m001.ovf" in capsys.readouterr().out
+
+
+def test_legacy_ovf1_time_description(tmp_path):
+    path = tmp_path / "m.ovf"
+    data = np.ones((3, 1, 1, 1))
+    _write_ovf2(path, data, desc=["Time (s): 2e-9"])
+    path.write_bytes(path.read_bytes().replace(b"OVF 2.0", b"OVF 1.0"))
+    frame, seconds = mx3sw.read_ovf(path, return_times=True)
+    np.testing.assert_array_equal(frame, data)
+    assert seconds == 2e-9
