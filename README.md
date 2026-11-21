@@ -101,7 +101,7 @@ GitHub's **"Cite this repository"** button (right sidebar) gives APA and BibTeX 
 @software{mandal_mx3sw_2026,
   author  = {Mandal, Subhrojyoti},
   title   = {mx3sw: spin-wave analysis tools for MuMax3},
-  version = {0.2.1},
+  version = {0.3.0},
   year    = {2026},
   doi     = {10.5281/zenodo.24375849},
   url     = {https://github.com/Dark-atoms/mumax3-spinwave-tools},
@@ -114,6 +114,8 @@ If you copy or adapt the code, the MIT license requires keeping the copyright no
 ## Contributing
 
 Issues and pull requests are welcome, especially other analysis steps you repeat in your own MuMax3 work.
+
+Thanks to [jwalith4418-Mj](https://github.com/jwalith4418-Mj) for adding OVF simulation-time support (#3).
 
 ## License
 
