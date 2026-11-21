@@ -6,9 +6,9 @@ authors:
   - family-names: Mandal
     given-names: Subhrojyoti
     affiliation: "Khulna University of Engineering & Technology (KUET)"
-version: 0.2.1
+version: 0.3.0
 doi: 10.5281/zenodo.24375849
-date-released: "2026-11-20"
+date-released: "2026-11-21"
 license: MIT
 repository-code: "https://github.com/Dark-atoms/mumax3-spinwave-tools"
 keywords:
