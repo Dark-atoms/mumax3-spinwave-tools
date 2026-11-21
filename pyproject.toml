@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mx3sw"
-version = "0.2.1"
+version = "0.3.0"
 description = "Small helpers for spin-wave analysis of MuMax3 simulations"
 readme = "README.md"
 license = { text = "MIT" }
