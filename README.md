@@ -15,6 +15,12 @@ Small, tested Python helpers for the analysis steps that come up in almost every
 
 The OVF reader gives arrays shaped `(component, z, y, x)`, the same layout as `mumax3-convert -numpy`.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/085c6c98-6958-4821-9a9e-569456c5c6ae" alt="Spin-wave dispersion map from a MuMax3 simulation" width="520">
+  <br>
+  <em>Example: Damon–Eshbach dispersion f(k) of a 1 µm Permalloy waveguide at 50 mT, from a 2D FFT of m<sub>y</sub>(t, y) in MuMax3 output, the kind of map the dispersion helpers produce.</em>
+</p>
+
 ## Install
 
 ```bash
